@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="437.0" prefWidth="1176.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unicv.com.projetofgestaodemulta.controllers.CondutorController">
+   <children>
+      
+            <TableView fx:id="tblcondutor" layoutX="33.0" layoutY="112.0" prefHeight="260.0" prefWidth="712.0">
+               <columns>
+                  <TableColumn fx:id="tcolidcondutor" prefWidth="95.99999618530273" text="ID_Condutor" />
+                  <TableColumn fx:id="tcolNome" minWidth="8.0" prefWidth="184.7999725341797" text="Nome" />
+                  <TableColumn fx:id="tcolcni" minWidth="6.0" prefWidth="90.4000244140625" text="CNI" />
+                  <TableColumn fx:id="tcolsexo" prefWidth="62.4000244140625" text="Sexo" />
+                  <TableColumn fx:id="tcolidade" prefWidth="60.800048828125" text="Idade" />
+                  <TableColumn fx:id="tcolcontato" prefWidth="89.5999755859375" text="Contato" />
+                  <TableColumn fx:id="tcolilharesidencia" prefWidth="124.79998779296875" text="Ilharesidencia" />
+               </columns>
+            </TableView>
+            <GridPane layoutX="849.0" layoutY="139.0" prefHeight="215.0" prefWidth="272.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.4" minWidth="10.0" prefWidth="69.99995117187501" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="365.0" minWidth="10.0" prefWidth="151.600048828125" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="txtsexo" prefHeight="30.0" prefWidth="295.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtcni" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label prefHeight="16.0" prefWidth="62.0" text="CNI" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="16.0" prefWidth="79.0" text="Sexo" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtnome" layoutX="75.0" layoutY="73.0" prefHeight="30.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtidade" layoutX="75.0" layoutY="73.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtcontato" layoutX="75.0" layoutY="104.0" prefHeight="30.0" prefWidth="295.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="txtilharesidencia" layoutX="75.0" layoutY="136.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label layoutX="10.0" layoutY="79.0" prefHeight="16.0" prefWidth="62.0" text="Nome:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="79.0" prefHeight="16.0" prefWidth="62.0" text="Idade:" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="142.0" prefHeight="16.0" prefWidth="62.0" text="Contato" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="142.0" prefHeight="16.0" prefWidth="62.0" text="Ilha.R" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER" layoutX="246.0" layoutY="388.0" spacing="50.0">
+               <children>
+                  <Button fx:id="btnAdicionar" mnemonicParsing="false" onAction="#handleAdicionarButtonAction" prefHeight="30.0" prefWidth="90.0" text="Adicionar" />
+                  <Button mnemonicParsing="false" onAction="#handleExcluirButtonAction" prefHeight="30.0" prefWidth="90.0" text="Excluir" />
+                  <Button mnemonicParsing="false" onAction="#handleAtualizarButtonAction" prefHeight="30.0" prefWidth="90.0" text="Atualizar" />
+                  <Button mnemonicParsing="false" onAction="#handleCancelarButtonAction" prefHeight="30.0" prefWidth="90.0" text="Cancelar" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="35.0" layoutY="35.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="txtBuscar" prefHeight="30.0" prefWidth="401.0" />
+                  <Button mnemonicParsing="false" onAction="#handleBuscarCondutorButtonAction" prefHeight="30.0" prefWidth="90.0" text="Buscar" />
+               </children>
+            </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="44.0" layoutY="73.0" prefHeight="18.0" spacing="10.0">
+         <children>
+            <Separator orientation="VERTICAL" prefHeight="7.0" prefWidth="6.0" />
+            <RadioButton fx:id="rbIdcondutor" mnemonicParsing="false" onAction="#handleRadioButtonAction" prefHeight="18.0" text="ID_Condutor">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgBuscar" />
+               </toggleGroup>
+            </RadioButton>
+            <Separator orientation="VERTICAL" prefHeight="7.0" prefWidth="6.0" />
+            <RadioButton fx:id="rbcni" mnemonicParsing="false" onAction="#handleRadioButtonAction" prefHeight="18.0" text="CNI" toggleGroup="$tgBuscar" />
+            <Separator orientation="VERTICAL" prefHeight="7.0" prefWidth="6.0" />
+            <RadioButton fx:id="rbTodos" mnemonicParsing="false" onAction="#handleRadioButtonAction" text="Todos" toggleGroup="$tgBuscar" />
+         </children>
+      </HBox>
+            <Label layoutX="862.0" layoutY="86.0" text="Detalhes do Condutor">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>

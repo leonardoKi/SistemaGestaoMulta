@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="1238.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unicv.com.projetofgestaodemulta.controllers.CancelarMultaController">
+   <children>
+      <TableView fx:id="tblCancelamento" layoutX="47.0" layoutY="128.0" prefHeight="250.0" prefWidth="755.0">
+         <columns>
+            <TableColumn fx:id="tcolidpagamento" prefWidth="138.3999900817871" text="ID-Pagamento" />
+            <TableColumn fx:id="tcolvalorpagar" minWidth="8.0" prefWidth="220.8000030517578" text="ValorPagar" />
+            <TableColumn fx:id="tcoldata" minWidth="6.0" prefWidth="236.79998779296875" text="Data Pagamento" />
+            <TableColumn fx:id="tcolestado" prefWidth="158.4000244140625" text="Estado" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="266.0" layoutY="408.0" spacing="50.0">
+         <children>
+            <Button fx:id="btnAdicionar" mnemonicParsing="false" onAction="#handleAdicionarButtonAction" prefHeight="30.0" prefWidth="90.0" text="Adicionar" />
+            <Button mnemonicParsing="false" onAction="#handleExcluirButtonAction" prefHeight="30.0" prefWidth="90.0" text="Excluir" />
+            <Button mnemonicParsing="false" onAction="#handleAtualizarButtonAction" prefHeight="30.0" prefWidth="90.0" text="Atualizar" />
+            <Button mnemonicParsing="false" onAction="#handleCancelarButtonAction" prefHeight="30.0" prefWidth="90.0" text="Cancelar" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="55.0" layoutY="55.0" spacing="10.0" />
+      <HBox alignment="CENTER_LEFT" layoutX="87.0" layoutY="89.0" prefHeight="18.0" prefWidth="375.0" spacing="10.0">
+         <children>
+            <RadioButton fx:id="rbidpagamento" layoutX="104.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleRadioButtonAction" prefHeight="18.0" text="ID_Pagamento">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgBuscar" />
+               </toggleGroup>
+            </RadioButton>
+            <Separator orientation="VERTICAL" prefHeight="7.0" prefWidth="6.0" />
+            <RadioButton fx:id="rbdata" mnemonicParsing="false" onAction="#handleRadioButtonAction" prefHeight="18.0" text="Data" toggleGroup="$tgBuscar" />
+            <Separator orientation="VERTICAL" prefHeight="7.0" prefWidth="6.0" />
+            <RadioButton fx:id="rbestado" mnemonicParsing="false" onAction="#handleRadioButtonAction" prefHeight="18.0" text="Estado" toggleGroup="$tgBuscar" />
+            <Separator orientation="VERTICAL" prefHeight="7.0" prefWidth="6.0" />
+            <RadioButton fx:id="rbTodos" mnemonicParsing="false" onAction="#handleRadioButtonAction" text="Todos" toggleGroup="$tgBuscar" />
+            <Separator layoutX="87.0" layoutY="10.0" orientation="VERTICAL" prefHeight="7.0" prefWidth="6.0" />
+         </children>
+      </HBox>
+      <Label layoutX="946.0" layoutY="101.0" text="Pagamento">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_LEFT" layoutX="47.0" layoutY="34.0" spacing="10.0">
+         <children>
+            <TextField fx:id="txtBuscar" prefHeight="30.0" prefWidth="364.0" />
+            <DatePicker fx:id="dtpBuscar" prefHeight="30.0" prefWidth="143.0" />
+            <Button mnemonicParsing="false" onAction="#handleBuscarPagamentoButtonAction" prefHeight="30.0" text="Buscar" />
+         </children>
+      </HBox>
+      <GridPane layoutX="909.0" layoutY="172.0" prefHeight="122.0" prefWidth="286.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.2000732421875" minWidth="10.0" prefWidth="107.800048828125" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.199951171875" minWidth="10.0" prefWidth="178.199951171875" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="txtvalorpagar" GridPane.columnIndex="1" />
+            <TextField fx:id="txtestado" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Valor a Pagar" />
+            <Label text="Data Pagamento" GridPane.rowIndex="1" />
+            <Label text="Estado" GridPane.rowIndex="2" />
+            <DatePicker fx:id="dtpdata" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

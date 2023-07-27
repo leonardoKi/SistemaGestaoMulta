@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="462.0" prefWidth="1053.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unicv.com.projetofgestaodemulta.controllers.ArtigoController">
+   <children>
+      <TableView fx:id="tblArtigo" layoutX="47.0" layoutY="122.0" prefHeight="246.0" prefWidth="624.0">
+         <columns>
+            <TableColumn fx:id="tcolidArtigo" prefWidth="128.8000144958496" text="ID-artigo" />
+            <TableColumn fx:id="tcolnumartigo" prefWidth="150.39996337890625" text="Num-Artigo" />
+            <TableColumn fx:id="tcolValorMulta" prefWidth="212.80007934570312" text="Valor" />
+            <TableColumn fx:id="tcolPontos" prefWidth="128.8000144958496" text="Num-Pontos" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER_LEFT" layoutX="47.0" layoutY="34.0" spacing="10.0">
+         <children>
+            <TextField fx:id="txtBuscar" prefHeight="36.0" prefWidth="364.0" />
+            <Button mnemonicParsing="false" onAction="#handleBuscarArtigoButtonAction" prefHeight="30.0" prefWidth="102.0" text="Buscar">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../../../../../../../OneDrive/Documents/leonardo/2ºano/4º%20Semestre/POO/Projeto%20Final/icones/procurar%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutX="47.0" layoutY="81.0" spacing="10.0">
+         <children>
+            <RadioButton fx:id="rbidArtigo" mnemonicParsing="false" onAction="#handleRadioButtonAction" prefHeight="18.0" prefWidth="87.0" selected="true" text="IDArtigo">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgBuscar" />
+               </toggleGroup>
+            </RadioButton>
+            <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="3.0" />
+            <RadioButton fx:id="rbValor" mnemonicParsing="false" onAction="#handleRadioButtonAction" prefHeight="18.0" text="ValorMulta" toggleGroup="$tgBuscar" />
+            <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="3.0" />
+            <RadioButton fx:id="rbTodos" mnemonicParsing="false" onAction="#handleRadioButtonAction" prefHeight="18.0" text="Todos" toggleGroup="$tgBuscar" />
+         </children>
+      </HBox>
+      <HBox layoutX="47.0" layoutY="332.0" spacing="10.0" />
+      <GridPane layoutX="680.0" layoutY="167.0" prefHeight="140.0" prefWidth="301.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="97.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="398.0" minWidth="10.0" prefWidth="212.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TextField fx:id="txtValorMulta" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="19.0" prefWidth="86.0" text="Num-Artigo">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label prefHeight="16.0" prefWidth="55.0" text="Valor" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label prefHeight="16.0" prefWidth="101.0" text="Num-Pontos" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtnumArtigo" layoutX="104.0" layoutY="65.0" prefHeight="30.0" GridPane.columnIndex="1" />
+            <TextField fx:id="txtPontos" layoutX="104.0" layoutY="71.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Label layoutX="842.0" layoutY="122.0" prefHeight="30.0" text="Artigo">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="213.0" layoutY="394.0" prefWidth="528.0" spacing="50.0">
+         <children>
+            <Button fx:id="btnAdicionar" mnemonicParsing="false" onAction="#handleAdicionarButtonAction" prefHeight="38.0" prefWidth="114.0" text="Adicionar">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../../../../../../../OneDrive/Documents/leonardo/2ºano/4º%20Semestre/POO/Projeto%20Final/icones/multa-administrativa.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#handleExcluirButtonAction" prefHeight="38.0" prefWidth="101.0" text="Excluir">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0">
+                     <image>
+                        <Image url="@../../../../../../../OneDrive/Documents/leonardo/2ºano/4º%20Semestre/POO/Projeto%20Final/icones/lixo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#handleAtualizarButtonAction" prefHeight="38.0" prefWidth="108.0" text="Atualizar">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../../../../../../../OneDrive/Documents/leonardo/2ºano/4º%20Semestre/POO/Projeto%20Final/icones/atualizada.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#handleCancelarButtonAction" prefHeight="34.0" prefWidth="80.0" text="Cancelar" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
